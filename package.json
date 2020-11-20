@@ -1,0 +1,18 @@
+{
+  "Name": "WWP",
+  "version": "1.0.0",
+  "description": "nothing spetial",
+  "main": "index.js",
+  "scripts": {
+    "start": "cypress open",
+    "test": "cypress run"
+  },
+  
+  "devDependencies": {
+    "cypress": "^5.6.0",
+    "cypress-cucumber-preprocessor": "^4.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }  
+}
