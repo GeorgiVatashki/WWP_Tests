@@ -1,0 +1,10 @@
+{
+    "baseUrl": "https://talksport.com/", 
+    "ignoreTestFiles": "**/examples/*",   
+    "viewportWidth": 1280,
+    "viewportHeight": 800,
+    "testFiles": "**/*.feature",
+    "pageLoadTimeout":130000
+
+    
+}
