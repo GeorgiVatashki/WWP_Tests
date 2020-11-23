@@ -32,6 +32,13 @@ Feature: The Talk Sport
 
     Scenario: Validate that the Search functionality works as expected
         Given A user navigate to Talk Sport home page
-        And Click Search button and enter a key word        
+        And Click Search button and enter a key word
         Then Validate that the searching word is pressent
+
+    Scenario: Validate that the Shop functionality works as expected
+        Given A user navigate to Talk Sport home page
+        And Click Shop button 
+        And Validate that the Shop page is pressent
+        And Press Back To Main Site button 
+        Then This will take you back to the Home Page
 

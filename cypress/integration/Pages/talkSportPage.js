@@ -73,4 +73,9 @@ export class TalkSport
     {
         cy.url().should('include', '?s=radio')
     }
+
+    ShopButton()
+    {
+        cy.contains('Shop').click()
+    }
 }

@@ -2,11 +2,13 @@
 
 import {AboutPage} from '../Pages/aboutPage'
 import {TalkSport} from '../Pages/talkSportPage'
-import{CompetitionPage} from '../Pages/competitionPage'
+import {CompetitionPage} from '../Pages/competitionPage'
+import{ ShopPage} from '../Pages/shopPage'
 
 let talkSportHomePage = new TalkSport()
 let talkSportAboutPage = new AboutPage()
 let talkSportCompetitionPage = new CompetitionPage()
+let talkSportShopPage = new ShopPage()
 
 
 
@@ -99,6 +101,34 @@ describe('Base Tests in Talk Sport website', () => {
         talkSportHomePage.SearchWordAssertion()            
             
     })
+
+    //next test
+
+    And('Click Shop button', () =>{
+
+        talkSportHomePage.ShopButton()
+    })     
+
+    And('Validate that the Shop page is pressent', () =>{
+        
+        talkSportShopPage.IsLoaded()           
+            
+    })
+
+    And('Press Back To Main Site button', () =>{
+        
+        talkSportShopPage.backToMainSiteButton()           
+            
+    })
+
+    Then('This will take you back to the Home Page', () =>{
+
+        talkSportHomePage.IsLoaded() 
+    })
+
+
+
+    
 })
 
 
