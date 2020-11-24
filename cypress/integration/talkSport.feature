@@ -22,15 +22,32 @@ Feature: The Talk Sport
 
     Scenario: Click Arrow button in the main titlebar  to reach the Competition option        
         And Click The Competition button
-        And Validate that the Competition page is loaded
+        And Validate that the title on the Competition page 
 
     Scenario: Validate that all titles under talkSport section are visible        
         And Click The worlds biggest sports radio station button
-        And Validate that all Titles are correct
+        And Validate that all Titles are correct    
 
-    Scenario: Validate that the Search functionality works as expected        
-        And Click Search button and enter a key word
-        Then Validate that the searching word is pressent
+        
+
+    Scenario Outline: Validate that the Search functionality works as expected        
+        And Click Search button and enter a <word>
+        Then Validate the <word> 
+
+        Examples: 
+
+        | word   | 
+        | radio  | 
+        | news   | 
+        | sport  | 
+
+
+
+
+
+
+
+
 
     Scenario: Validate that the Shop functionality works as expected        
         And Click Shop button

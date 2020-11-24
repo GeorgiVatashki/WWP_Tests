@@ -4,9 +4,10 @@ export class TalkSport
 {
     GoTo()
     {  
+        var talkSportUrl = 'https://talksport.com'
         cy.setCookie('euconsent-v2', 'testCookieValue')
         cy.setCookie('consentUUID', 'testCookieValue')       
-        cy.visit('https://talksport.com')        
+        cy.visit(talkSportUrl)        
     }
 
     IsLoaded()
@@ -27,13 +28,18 @@ export class TalkSport
         cy.get('[class="panel__title"]').should('contain', 'News Corp')
         cy.get('[class="panel__title"]').should('contain', 'Services')
     }
-
-    SearchButton(keyword)
+    
+    SearchButton(word)
     {
         var initialSearchButton = cy.contains('Search ').click()
-        initialSearchButton.type(keyword)
-        var searchButton = cy.get('[value="Search"]').click()  
+        initialSearchButton.type(word)
+        cy.get('[value="Search"]').click()               
     }
+
+    SearhWordAssertion(searchingWord)
+    {
+        cy.url().should('include', searchingWord)
+    }    
 
     CompetitionButton()
     {        
@@ -67,12 +73,7 @@ export class TalkSport
             const shedule = talkSportSection.find('[id="menu-item-374050"]').text()
             expect(shedule).to.equal('talkSPORT schedule')  
         })
-    }
-
-    SearchWordAssertion()
-    {
-        cy.url().should('include', '?s=radio')
-    }
+    }    
 
     ShopButton()
     {

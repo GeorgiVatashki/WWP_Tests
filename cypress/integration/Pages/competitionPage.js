@@ -8,7 +8,7 @@ export class CompetitionPage
 
     IsLoaded()
     {
-        cy.title().should('eq', 'Competitions – talkSPORT')
+        cy.title().should('include', 'Competitions')
         cy.get('[class="swiper-wrapper sub-nav__list"]').find('a').should('contain','All Competitions')      
     }
 }

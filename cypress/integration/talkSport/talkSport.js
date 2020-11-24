@@ -1,5 +1,10 @@
 /// <reference types="cypress"/>
 
+
+//when do we have to use these
+//import {Given} from "cypress-cucumber-preprocessor"
+
+
 import {AboutPage} from '../Pages/aboutPage'
 import {TalkSport} from '../Pages/talkSportPage'
 import {CompetitionPage} from '../Pages/competitionPage'
@@ -68,7 +73,7 @@ describe('Base Tests in Talk Sport website', () => {
         talkSportHomePage.CompetitionButton()
     })
 
-    And('Validate that the Competition page is loaded', () =>{
+    And('Validate that the title on the Competition page', () =>{
 
         talkSportCompetitionPage.IsLoaded()      
             
@@ -87,22 +92,18 @@ describe('Base Tests in Talk Sport website', () => {
             
     })
 
-    //next text
+   
+    And('Click Search button and enter a {word}', (word) =>{  
 
-    And('Click Search button and enter a key word', () =>{
-
-        talkSportHomePage.SearchButton('radio')
-    }) 
-    
-
-    Then('Validate that the searching word is pressent', () =>{
-
+        talkSportHomePage.SearchButton(word)
         
-        talkSportHomePage.SearchWordAssertion()            
-            
-    })
+    })    
 
-    //next test
+    Then('Validate the {word}', (word) =>{        
+
+        talkSportHomePage.SearhWordAssertion(word)      
+    })
+    
 
     And('Click Shop button', () =>{
 
